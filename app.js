@@ -1,6 +1,7 @@
-var express = require('express');
-var request = require('request');
-var app = express();
+var express = require('express')
+var request = require('request')
+var app = express()
+require('newrelic')
 
 app.get('/', function(req, res){
 	request({
@@ -15,7 +16,7 @@ app.get('/', function(req, res){
 			else {
 				res.status(500).send(error && error.message || response && response.statusCode)
 			}
-	});
-});
+	})
+})
 
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT || 8000)
