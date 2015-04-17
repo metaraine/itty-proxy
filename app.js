@@ -1,7 +1,7 @@
+require('newrelic')
 var express = require('express')
 var request = require('request')
 var app = express()
-require('newrelic')
 
 app.get('/', function(req, res){
 	request({
